@@ -117,6 +117,13 @@
    "label": "Active", 
    "permlevel": 0, 
    "precision": ""
+  },
+   {
+     "fieldname": "description",
+     "fieldtype": "Data",
+     "label": "Description",
+     "permlevel": 0,
+     "precision": ""
   }
  ], 
  "hide_heading": 0, 
@@ -125,8 +132,8 @@
  "in_dialog": 0, 
  "is_submittable": 0, 
  "issingle": 0, 
- "istable": 0, 
- "modified": "2015-03-03 10:15:36.802374", 
+ "istable": 0,
+  "modified": "2015-03-03 15:34:02.547635",
  "modified_by": "Administrator", 
  "module": "erpnext_peru_base", 
  "name": "Element Table", 
