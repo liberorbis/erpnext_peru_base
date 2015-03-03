@@ -1,9 +1,9 @@
-# Copyright (c) 2013, LiberOrbis SAC and contributors
+# Copyright (c) 2013, dsdf and contributors
 # For license information, please see license.txt
 
 from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
-class table_sunat(Document):
+class TableSunat12(Document):
 	pass
