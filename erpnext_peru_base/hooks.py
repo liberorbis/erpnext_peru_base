@@ -23,7 +23,7 @@ doc_events = {
 
 }
 
-#after_install = "erpnext_peru_base.erpnext_peru_base.upload_tables_sunat.tables_sunat_after_install"
+after_install = "erpnext_peru_base.erpnext_peru_base.upload_tables_sunat.tables_sunat_after_install"
 
 # Includes in <head>
 # ------------------
