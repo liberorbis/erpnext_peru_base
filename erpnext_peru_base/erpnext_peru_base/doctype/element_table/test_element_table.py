@@ -1,10 +1,12 @@
-# Copyright (c) 2013, LiberOrbis SAC and Contributors
+# Copyright (c) 2013, dsdf and Contributors
 # See license.txt
+from __future__ import unicode_literals
 
 import frappe
 import unittest
 
-test_records = frappe.get_test_records('element_table')
+test_records = frappe.get_test_records('Element Table')
 
-class Testelement_table(unittest.TestCase):
+
+class TestElementTable(unittest.TestCase):
 	pass
