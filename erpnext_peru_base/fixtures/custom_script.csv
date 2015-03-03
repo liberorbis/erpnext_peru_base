@@ -1,0 +1,26 @@
+"Data Import Template"
+"Table:","Custom Script"
+""
+""
+"Notes:"
+"Please do not change the template headings."
+"First data column must be blank."
+"If you are uploading new records, leave the ""name"" (ID) column blank."
+"If you are uploading new records, ""Naming Series"" becomes mandatory, if present."
+"Only mandatory fields are necessary for new records. You can delete non-mandatory columns if you wish."
+"For updating, you can update only selective columns."
+"You can only upload upto 5000 records in one go. (may be less in some cases)"
+""
+"DocType:","Custom Script","",""
+"Column Labels:","ID","DocType","Script"
+"Column Name:","name","dt","script"
+"Mandatory:","Yes","No","No"
+"Type:","Data (text)","Link","Code"
+"Info:","","Valid DocType",""
+"Start entering data below this line"
+"","""Sales Invoice-Client""","Sales Invoice","cur_frm.fields_dict['document_type'].get_query = function(doc, cdt, cdn) {
+	return{
+		query: ""erpnext_peru_base.erpnext_peru_base.queries.get_document_type"",
+		filters: {'user': self.user}
+	}
+}"
