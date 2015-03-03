@@ -13,7 +13,7 @@ from frappe import _
 def tables_sunat_after_install():
     install_docs = [
 
-        {'doctype':'table_sunat', 'name':'TABLAS_SUNAT','field_name':'TABLAS_SUNAT','table_code':'TABLAS_SUNAT', 'active':1},
+        #{'doctype':'', 'name':'TABLAS_SUNAT','field_name':'TABLAS_SUNAT','table_code':'TABLAS_SUNAT', 'active':1},
         #TABLE 01 - SUNAT
 
          {'doctype':'Table Sunat 01', 'name':'TIPOS DE MEDIO DE PAGO','field_name':'TIPOS DE MEDIO DE PAGO','code':'TABLA_1', 'active':1,
@@ -40,7 +40,7 @@ def tables_sunat_after_install():
          ]
          },
          #TABLE 02 - SUNAT
-        #{'doctype':'table_sunat', 'name':'TIPOS DE DOCUMENTO DE IDENTIDAD','field_name':'TIPOS DE DOCUMENTO DE IDENTIDAD','table_code':'TABLA_2', 'active':1,)},
+        #{'doctype':'', 'name':'TIPOS DE DOCUMENTO DE IDENTIDAD','field_name':'TIPOS DE DOCUMENTO DE IDENTIDAD','table_code':'TABLA_2', 'active':1,)},
         {'doctype':'Table Sunat 02', 'name':'TIPOS DE MEDIO DE PAGO','field_name':'TIPOS DE MEDIO DE PAGO','code':'TABLA_1', 'active':1,
          'element_tables':[
              {'name':'OTROS TIPOS DE DOCUMENTOS', 'element_code':'0','element_code2':'','field_name':'REMESA SIMPLE - COMERCIO EXTERIOR', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
@@ -51,7 +51,7 @@ def tables_sunat_after_install():
          ]
          },
         #TABLE 12 - SUNAT
-        #{'doctype':'table_sunat', 'name':'TIPO DE OPERACION','field_name':'TIPO DE OPERACION','table_code':'TABLA_12', 'active':1,)},
+        #{'doctype':'', 'name':'TIPO DE OPERACION','field_name':'TIPO DE OPERACION','table_code':'TABLA_12', 'active':1,)},
          {'doctype':'Table Sunat 12', 'name':'TIPOS DE MEDIO DE PAGO','field_name':'TIPOS DE MEDIO DE PAGO','code':'TABLA_1', 'active':1,
          'element_tables':[
              {'name':'VENTA', 'element_code':'01','element_code2':'','field_name':'VENTA', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
