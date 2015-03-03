@@ -9,7 +9,7 @@ app_version = "0.0.1"
 
 fixtures = [
 	"Custom Field",
-	"Custom Script"
+	"Custom Script",
 ]
 doc_events = {
      	"Customer": {
