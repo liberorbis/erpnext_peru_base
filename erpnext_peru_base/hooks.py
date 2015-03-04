@@ -16,9 +16,7 @@ doc_events = {
 		"validate": "erpnext_peru_base.erpnext_peru_base.validate_vat.validate_vat",
         },
 	"Sales Invoice": {
-		"autoname": "base_peru.base_peru.doctype.sales_invoice.sales_invoice.autoname",
-		"get_default_naming_series": "base_peru.base_peru.doctype.sales_invoice.sales_invoice.get_default_naming_series",
-		"preserve_naming_series_options_in_property_setter": "base_peru.base_peru.doctype.sales_invoice.sales_invoice.preserve_naming_series_options_in_property_setter"
+		"autoname": "erpnext_peru_base.erpnext_peru_base.doctype.sales_invoice.sales_invoice.autoname"
 	}
 
 }
