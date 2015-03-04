@@ -92,10 +92,10 @@ after_install = "erpnext_peru_base.erpnext_peru_base.upload_tables_sunat.tables_
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"erpnext_peru_base.tasks.all"
-# 	],
+scheduler_events = {
+"all": [
+    "erpnext_peru_base.erpnext_peru_base.tasks.get_sunat_rates"
+],
 # 	"daily": [
 # 		"erpnext_peru_base.tasks.daily"
 # 	],
@@ -107,8 +107,8 @@ after_install = "erpnext_peru_base.erpnext_peru_base.upload_tables_sunat.tables_
 # 	]
 # 	"monthly": [
 # 		"erpnext_peru_base.tasks.monthly"
-# 	]
-# }
+# ]
+}
 
 # Testing
 # -------
