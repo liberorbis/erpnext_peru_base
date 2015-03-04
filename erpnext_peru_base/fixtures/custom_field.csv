@@ -18,9 +18,9 @@
 "Type:","Data (text)","Link","Select","Data","Select","Select","Text","Text","Data","Int","Check","Check","Check","Data","Text","Check","Data","Check","Check","Check","Check","Check","Check"
 "Info:","","Valid DocType","One of: Button, Check, Code, Column Break, Currency, Data, Date, Datetime, Dynamic Link, Float, HTML, Image, Int, Link, Long Text, Password, Percent, Read Only, Section Break, Select, Small Text, Table, Text, Text Editor, Time","","","One of: 1, 2, 3, 4, 5, 6, 7, 8, 9","","","","Integer","0 or 1","0 or 1","0 or 1","","","0 or 1","","0 or 1","0 or 1","0 or 1","0 or 1","0 or 1","0 or 1"
 "Start entering data below this line"
-"","""Currency Exchange-exchange_rates""","Currency Exchange","Table","Exchange Rates","exchange_rate","","Exchange Rate","","exchange_rates",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Currency-base_rate""","Currency","Check","Base Rate","number_format","","","","base_rate",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Sales Invoice-document_nr""","Sales Invoice","Int","document_nr","serie_nr","","","Document Number","document_nr",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Sales Invoice-serie_nr""","Sales Invoice","Data","serie_nr","document_type","","","","serie_nr",0,1,0,0,"","",0,"",0,0,0,0,0,0
-"","""Sales Invoice-document_type""","Sales Invoice","Link","document_type","naming_series","","Element Table","Document Type Sunat","document_type",0,0,0,0,"20","",0,"",0,0,0,0,0,0
 "","""Customer-doc_number""","Customer","Data","Number document","customer_name","","","","doc_number",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Sales Invoice-document_type""","Sales Invoice","Link","document_type","naming_series","","Element Table","Document Type Sunat","document_type",0,0,0,0,"20","",0,"",0,0,0,0,0,0
+"","""Sales Invoice-serie_nr""","Sales Invoice","Data","serie_nr","document_type","","","","serie_nr",0,1,0,0,"","",0,"",0,0,0,0,0,0
+"","""Sales Invoice-document_nr""","Sales Invoice","Int","document_nr","serie_nr","","","Document Number","document_nr",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Currency-base_rate""","Currency","Check","Base Rate","number_format","","","","base_rate",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Currency Exchange-exchange_rates""","Currency Exchange","Table","Exchange Rates","exchange_rate","","Exchange Rate","","exchange_rates",0,0,0,0,"","",0,"",0,0,0,0,0,0
