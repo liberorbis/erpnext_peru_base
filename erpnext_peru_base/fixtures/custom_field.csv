@@ -20,5 +20,5 @@
 "Start entering data below this line"
 "","""Customer-doc_number""","Customer","Data","Number document","customer_name","","","","doc_number",0,0,0,0,"","",0,"",0,0,0,0,0,0
 "","""Sales Invoice-document_type""","Sales Invoice","Link","document_type","naming_series","","Element Table","Document Type Sunat","document_type",0,0,0,0,"20","",0,"",0,0,0,0,0,0
-"","""Sales Invoice-serie_nr""","Sales Invoice","Data","serie_nr","columnDocument","","","","serie_nr",0,1,0,0,"","",0,"",0,0,0,0,0,0
-"","""Sales Invoice-document_nr""","Sales Invoice","Int","document_nr","columnDocument2","","","Document Number","document_nr",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Sales Invoice-serie_nr""","Sales Invoice","Data","serie_nr","document_type","","","","serie_nr",0,1,0,0,"","",0,"",0,0,0,0,0,0
+"","""Sales Invoice-document_nr""","Sales Invoice","Int","document_nr","serie_nr","","","Document Number","document_nr",0,0,0,0,"","",0,"",0,0,0,0,0,0
