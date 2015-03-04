@@ -6,5 +6,5 @@ import frappe
 from frappe.model.document import Document
 
 
-class TableSunat01(Document):
+class TableSunat(Document):
     pass
