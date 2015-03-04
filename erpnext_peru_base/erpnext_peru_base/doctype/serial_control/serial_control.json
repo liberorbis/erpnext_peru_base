@@ -32,8 +32,8 @@
   {
    "fieldname": "document_type", 
    "fieldtype": "Link", 
-   "label": "document_type", 
-   "options": "element_table", 
+   "label": "document_type",
+    "options": "Element Table",
    "permlevel": 0, 
    "precision": ""
   }, 
@@ -66,8 +66,8 @@
  "in_dialog": 0, 
  "is_submittable": 0, 
  "issingle": 0, 
- "istable": 0, 
- "modified": "2015-02-27 17:44:37.191640", 
+ "istable": 0,
+  "modified": "2015-03-03 10:11:40.892863",
  "modified_by": "Administrator", 
  "module": "erpnext_peru_base", 
  "name": "Serial Control", 
