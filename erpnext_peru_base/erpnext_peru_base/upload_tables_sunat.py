@@ -23,7 +23,7 @@ def tables_sunat_after_install():
              {'name':'TARJETA DE CREDITO', 'element_code':'006', 'element_code2':'','field_name':'TARJETA DE CREDITO', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1},
              {'name':'CHEQUE NO NEGOCIABLE', 'element_code':'007', 'element_code2':'','field_name':'CHEQUE NO NEGOCIABLE', 'val_porcent':0,'val_float':0,'val_string':'','description':'CHEQUES CON LA CLÁUSULA DE <<NO NEGOCIABLE>>, <<INTRANSFERIBLES>>, <<NO A LA ORDEN>> U OTRA EQUIVALENTE, A QUE SE REFIERE EL INCISO F) DEL ARTICULO 5° DEL DECRETO LEGISLATIVO.','active':1},
              {'name':'EFECTIVO,NO OBLIGADO A MEDIOS DE PAGO', 'element_code':'008', 'element_code2':'','field_name':'EFECTIVO,NO OBLIGADO A MEDIOS DE PAGO', 'val_porcent':0,'val_float':0,'val_string':'','description':'EFECTIVO, EN LOS DEMÁS CASOS','active':1},
-             {'name':'EFECTIVO', 'element_code':'009', 'element_code2':'','field_name':'EFECTIVO', 'val_porcent':0,'val_float':0,'val_string':'','description':'EFECTIVO, EN LOS DEMÁS CASOS','active':1,'table_sunat':_('TIPOS DE MEDIO DE PAGO'),},
+             {'name':'EFECTIVO', 'element_code':'009', 'element_code2':'','field_name':'EFECTIVO', 'val_porcent':0,'val_float':0,'val_string':'','description':'EFECTIVO, EN LOS DEMÁS CASOS','active':1},
              {'name':'MEDIOS DE PAGO DE CE', 'element_code':'010', 'element_code2':'','field_name':'MEDIOS DE PAGO DE COMERCIO EXTERIOR', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1},
              {'name':'LETRAS DE CAMBIO', 'element_code':'011', 'element_code2':'','field_name':'LETRAS DE CAMBIO', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1},
              {'name':'TRANSFERENCIAS - CE', 'element_code':'101', 'element_code2':'','field_name':'TRANSFERENCIAS - COMERCIO EXTERIOR', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1},
@@ -48,7 +48,7 @@ def tables_sunat_after_install():
          ]
          },
         #TABLE 12 - SUNAT
-        {'doctype':'table_sunat', 'name':'T12','field_name':'TIPO DE OPERACION','table_code':'TABLA_12', 'active':1,
+        {'doctype':'Table Sunat', 'name':'T12','field_name':'TIPO DE OPERACION','table_code':'TABLA_12', 'active':1,
          'element_tables':[
              {'name':'VENTA', 'element_code':'01','element_code2':'','field_name':'VENTA', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'COMPRA', 'element_code':'02','element_code2':'','field_name':'COMPRA', 'val_porcent':0,'val_float':0,'val_string':'','description':'DOCUMENTO NACIONAL DE IDENTIDAD','active':1,},
