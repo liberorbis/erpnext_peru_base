@@ -5,8 +5,8 @@ from __future__ import unicode_literals
 import frappe
 import unittest
 
-test_records = frappe.get_test_records('Table Sunat 01')
+test_records = frappe.get_test_records('Table Sunat')
 
 
-class TestTableSunat01(unittest.TestCase):
+class TestTableSunat(unittest.TestCase):
     pass

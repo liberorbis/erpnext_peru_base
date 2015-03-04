@@ -90,7 +90,7 @@
       "fieldname": "parent_table_sunat",
       "fieldtype": "Link",
       "label": "Parent",
-      "options": "Table Sunat 01",
+      "options": "Table Sunat",
       "permlevel": 0,
       "precision": ""
     }
@@ -105,7 +105,7 @@
   "modified": "2015-03-03 10:24:33.379576",
   "modified_by": "Administrator",
   "module": "erpnext_peru_base",
-  "name": "Table Sunat 01",
+  "name": "Table Sunat",
   "name_case": "",
   "owner": "Administrator",
   "permissions": [
