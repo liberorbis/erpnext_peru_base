@@ -21,6 +21,6 @@
 "","""Sales Invoice-Client""","Sales Invoice","cur_frm.fields_dict['document_type'].get_query = function(doc, cdt, cdn) {
 	return{
 		query: ""erpnext_peru_base.erpnext_peru_base.queries.get_document_type"",
-		filters: {'user': self.user}
+		filters: {'user': self.user, 'table':'T10', 'document':'Sales Invoice'}
 	}
 }"
