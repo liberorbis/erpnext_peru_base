@@ -19,3 +19,6 @@
 "Info:","","Valid DocType","One of: Button, Check, Code, Column Break, Currency, Data, Date, Datetime, Dynamic Link, Float, HTML, Image, Int, Link, Long Text, Password, Percent, Read Only, Section Break, Select, Small Text, Table, Text, Text Editor, Time","","","One of: 1, 2, 3, 4, 5, 6, 7, 8, 9","","","","Integer","0 or 1","0 or 1","0 or 1","","","0 or 1","","0 or 1","0 or 1","0 or 1","0 or 1","0 or 1","0 or 1"
 "Start entering data below this line"
 "","""Customer-doc_number""","Customer","Data","Number document","customer_name","","","","doc_number",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Sales Invoice-document_type""","Sales Invoice","Link","document_type","naming_series","","element_table","Document Type Sunat","document_type",0,0,0,0,"20","",0,"",0,0,0,0,0,0
+"","""Sales Invoice-serie_nr""","Sales Invoice","Data","serie_nr","columnDocument","","","","serie_nr",0,1,0,0,"","",0,"",0,0,0,0,0,0
+"","""Sales Invoice-document_nr""","Sales Invoice","Int","document_nr","columnDocument2","","","Document Number","document_nr",0,0,0,0,"","",0,"",0,0,0,0,0,0
