@@ -17,19 +17,18 @@ def get_url(url, values={}):
         from cookielib import CookieJar
 
         cj = CookieJar()
-        opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
-        response = opener.open(url)
+        erpnext = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+        response = erpnext.open(url)
         rawfile = response.read()
         if values:
             data = urllib.urlencode(values)
-            response = opener.open(url, data)
+            response = erpnext.open(url, data)
             rawfile = response.read()
         return rawfile
     except ImportError:
         raise Exception('Error: Unable to import urllib !')
     except IOError:
         raise Exception('Error: Web Service [%s] does not exist or it is non accesible !' % url)
-
 
 def sunat_access_exception(Exception):
     pass
@@ -43,26 +42,20 @@ def get_sunat_rates(values={}):
     data = get_url(url, values=values)
     if data:
         print "SUNAT sent a response"
-        # logger.info("[%s] %s", netsvc.LOG_DEBUG, "SUNAT sent a response")
+
     else:
         print  'Error retrieving info from SUNAT. No data retrieved from www.sunat.gob.pe - values', values
-        # logger.info("[%s] %s", netsvc.LOG_DEBUG,
-        #            'Error retrieving info from SUNAT. No data retrieved from www.sunat.gob.pe - values: %s' % values)
         return {}
 
     res_id = re.findall('<title>SUNAT - Tipo de Cambio Oficial</title>', data)
     if not (res_id and len(res_id) > 0):
         print 'Error retrieving info from SUNAT. Page data could not be recognized! - values: %s', values
-        # logger.info("[%s] %s", netsvc.LOG_DEBUG,
-        #           'Error retrieving info from SUNAT. Page data could not be recognized! - values: %s' % values)
         return {}
 
     res_id = re.findall('''<h3>(\S+) - (\d+)</h3>''', data)
 
     if not (res_id and len(res_id) > 0):
         print 'Error retrieving info from SUNAT. Page data could not be recognized! - values:', values
-        # logger.info("[%s] %s", netsvc.LOG_DEBUG,
-        #            'Error retrieving info from SUNAT. Page data could not be recognized! - values: %s' % values)
 
     month = res_id[0][0]
     year = int(res_id[0][1])
@@ -70,13 +63,9 @@ def get_sunat_rates(values={}):
 
     if (month not in months) or month != months[today.month - 1]:
         print 'Error retrieving info from SUNAT. Month is not recognized! - values: ', values
-        # logger.info("[%s] %s", netsvc.LOG_DEBUG,
-        #            'Error retrieving info from SUNAT. Month is not recognized! - values: %s' % values)
         return {}
     if year != today.year:
         print 'Error retrieving info from SUNAT. Year is not recognized! - values:', values
-        # logger.info("[%s] %s", netsvc.LOG_DEBUG,
-        #            'Error retrieving info from SUNAT. Year is not recognized! - values: %s' % values)
         return {}
 
     res_id = re.findall(
@@ -85,8 +74,6 @@ def get_sunat_rates(values={}):
 
     if not (res_id and len(res_id) > 0):
         print 'Error retrieving info from SUNAT. Exchange rates not found! values:', values
-        # logger.info("[%s] %s", netsvc.LOG_DEBUG,
-        #            'Error retrieving info from SUNAT. Exchange rates not found! values: %s' % values)
         return {}
 
     days = {}
@@ -99,8 +86,6 @@ def get_sunat_rates(values={}):
     day = today.day
     if day not in days:
         print 'Error retrieving info from SUNAT. Day number %s not found in data!', day
-        # logger.info("[%s] %s", netsvc.LOG_DEBUG,
-        #            'Error retrieving info from SUNAT. Day number %s not found in data!' % day)
     else:
         res['current_sale_ratio'] = days[today.day]['Sale']
         res['current_purchase_ratio'] = days[today.day]['Purchase']
