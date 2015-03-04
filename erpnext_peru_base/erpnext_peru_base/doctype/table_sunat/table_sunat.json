@@ -85,14 +85,6 @@
       "reqd": 0,
       "search_index": 0,
       "set_only_once": 0
-    },
-    {
-      "fieldname": "parent_table_sunat",
-      "fieldtype": "Link",
-      "label": "Parent",
-      "options": "Table Sunat",
-      "permlevel": 0,
-      "precision": ""
     }
   ],
   "hide_heading": 0,
