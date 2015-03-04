@@ -48,7 +48,7 @@ def tables_sunat_after_install():
          ]
          },
         #TABLE 12 - SUNAT
-        {'doctype':'Table Sunat', 'name':'T12','field_name':'TIPO DE OPERACION','table_code':'TABLA_12', 'active':1,
+        {'doctype':'Table Sunat', 'name':'T12','field_name':'TIPO DE OPERACION','code':'TABLA_12', 'active':1,
          'element_tables':[
              {'name':'VENTA', 'element_code':'01','element_code2':'','field_name':'VENTA', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'COMPRA', 'element_code':'02','element_code2':'','field_name':'COMPRA', 'val_porcent':0,'val_float':0,'val_string':'','description':'DOCUMENTO NACIONAL DE IDENTIDAD','active':1,},
@@ -70,7 +70,7 @@ def tables_sunat_after_install():
          ]
          },
         #TABLE 10 - SUNAT
-        {'doctype':'Table Sunat', 'name':'T10','field_name':'TIPO DE COMPROBANTE DE PAGO O DOCUMENTO','table_code':'TABLA_10', 'active':1,
+        {'doctype':'Table Sunat', 'name':'T10','field_name':'TIPO DE COMPROBANTE DE PAGO O DOCUMENTO','code':'TABLA_10', 'active':1,
 
          'element_tables':[
              {'name':'Otros(especificar)', 'element_code':'00','element_code2':'','field_name':'Otros(especificar)', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
