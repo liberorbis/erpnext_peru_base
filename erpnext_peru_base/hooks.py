@@ -13,12 +13,14 @@ fixtures = [
 ]
 doc_events = {
      	"Customer": {
-		"validate": "erpnext_peru_base.erpnext_peru_base.validate_vat.validate_vat",
+		"validate": "erpnext_peru_base.erpnext_peru_base.controller.validate_vat.validate_vat",
         },
 	"Sales Invoice": {
-		"autoname": "erpnext_peru_base.erpnext_peru_base.doctype.sales_invoice.sales_invoice.autoname"
+		"autoname": "erpnext_peru_base.erpnext_peru_base.controller.naming.autoname"
+	},
+	"Delivery Note": {
+		"autoname": "erpnext_peru_base.erpnext_peru_base.controller.naming.autoname"
 	}
-
 }
 
 after_install = "erpnext_peru_base.erpnext_peru_base.upload_tables_sunat.tables_sunat_after_install"
