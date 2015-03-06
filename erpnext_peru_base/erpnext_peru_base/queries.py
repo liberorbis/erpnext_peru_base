@@ -30,10 +30,20 @@ def get_serie_nr(doctype, txt, searchfield, start, page_len, filters):
 	if filters.get('document'):
 		cond += '(`tabSerial Control`.doc_type = "' + filters['document'] + '" ) and'
 
-	aa= frappe.db.sql("""select `tabSerial Control`.serie_nr from `tabSerial Control`
+	return frappe.db.sql("""select `tabSerial Control`.serie_nr from `tabSerial Control`
 		where `tabSerial Control`.active = 1
-
 		limit 1 """ )
+
+def get_location(doctype, txt, searchfield, start, page_len, filters):
+	cond = ''
+	if filters.get('department'):
+		cond = '`tabAddress Province`.department = "' + filters['department'] + '"  '
+	aa = """select `tabAddress Province`.name from `tabAddress Province`
+		where `tabAddress Province`.description like "%(txt)s and %(cond)s "
+		order by `tabAddress Province`.description asc
+		limit %(start)s, %(page_len)s """ % {'cond': cond,'txt': "%%%s%%" % txt,
+		'start': start, 'page_len': page_len}
 	print aa
-	return ["001"]
+	return frappe.db.sql(aa)
+
 

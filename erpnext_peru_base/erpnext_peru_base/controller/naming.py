@@ -20,3 +20,6 @@ def autoname(sales_invoice, method):
 	sales_invoice.name = make_autoname(type +sales_invoice.serie_nr+'-.######')
 	sales_invoice.document_nr = sales_invoice.name.split("-")[1]
 	#self.name = str(self.document_type) + ' - ' + str(self.document_nr)
+
+def autoname_code(doc, method):
+	doc.name = doc.code

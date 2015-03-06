@@ -20,6 +20,9 @@ doc_events = {
 	},
 	"Delivery Note": {
 		"autoname": "erpnext_peru_base.erpnext_peru_base.controller.naming.autoname"
+	},
+	"Address District": {
+		"autoname": "erpnext_peru_base.erpnext_peru_base.controller.naming.autoname_code"
 	}
 }
 
