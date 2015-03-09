@@ -34,16 +34,24 @@ def get_serie_nr(doctype, txt, searchfield, start, page_len, filters):
 		where `tabSerial Control`.active = 1
 		limit 1 """ )
 
-def get_location(doctype, txt, searchfield, start, page_len, filters):
+def get_province(doctype, txt, searchfield, start, page_len, filters):
 	cond = ''
 	if filters.get('department'):
-		cond = '`tabAddress Province`.department = "' + filters['department'] + '"  '
-	aa = """select `tabAddress Province`.name from `tabAddress Province`
-		where `tabAddress Province`.description like "%(txt)s and %(cond)s "
+		cond = 'and `tabAddress Province`.department = "' + filters['department'] + '"  '
+	return frappe.db.sql("""select `tabAddress Province`.name, `tabAddress Province`.description from `tabAddress Province`
+		where (`tabAddress Province`.description like "%(txt)s"  or
+		`tabAddress Province`.name like "%(txt)s" ) %(cond)s
 		order by `tabAddress Province`.description asc
 		limit %(start)s, %(page_len)s """ % {'cond': cond,'txt': "%%%s%%" % txt,
-		'start': start, 'page_len': page_len}
-	print aa
-	return frappe.db.sql(aa)
+		'start': start, 'page_len': page_len} )
 
+def get_district(doctype, txt, searchfield, start, page_len, filters):
+	cond = ''
+	if filters.get('province'):
+		cond = 'and `tabAddress District`.parent = "' + filters['province'] + '"  '
+	return frappe.db.sql("""select `tabAddress District`.name, `tabAddress District`.description from `tabAddress District`
+		where `tabAddress District`.description like "%(txt)s" or `tabAddress District`.name like "%(txt)s"
+		 %(cond)s order by `tabAddress District`.description asc
+		limit %(start)s, %(page_len)s """ % {'cond': cond,'txt': "%%%s%%" % txt,
+		'start': start, 'page_len': page_len} )
 
