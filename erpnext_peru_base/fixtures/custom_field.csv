@@ -33,3 +33,6 @@
 "","""Delivery Note-serie_nr""","Delivery Note","Data","serie_nr","document_type","","","","serie_nr",0,1,0,0,"","",0,"",0,0,0,0,0,0
 "","""Delivery Note-document_nr""","Delivery Note","Int","document_nr","serie_nr","","","Document Number","document_nr",0,0,0,0,"","",0,"",0,0,0,0,0,0
 "","""Customer-type_document""","Customer","Link","Type Document","customer_name","","Element Table","","type_document",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Address-department""","Address","Link","Department","address_line2","","Address Department","department","department",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Address-province""","Address","Link","Province","department","","Address Province","Province","province",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Address-district""","Address","Link","District","province","","Address District","district","district",0,0,0,0,"","",0,"",0,0,0,0,0,0
