@@ -12,7 +12,7 @@ from frappe.model.document import Document
 
 _logger = logging.getLogger(frappe.__name__)
 
-#called father function to validate various numbers of documents by type
+#called father function to validate various numbers of documents
 @frappe.whitelist(allow_guest=True)
 def validate_vat_customer(doc, method):
     ret=True
