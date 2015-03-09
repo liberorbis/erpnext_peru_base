@@ -109,7 +109,7 @@ def get_sunat_rates(values={}):
         "doctype": "Exchange Rate", "parent": 'USD-PEN', "parentfield": 'exchange_rates',
         "parenttype": 'Currency Exchange', 'idx': 1,
         "type": 'purchase',
-        "date": '2015-03-06',
+        "date": '2015-03-09',
         "value": val_purchase_here
     })
     exchange_rate_purchase.ignore_permissions = True
@@ -121,7 +121,7 @@ def get_sunat_rates(values={}):
         "doctype": "Exchange Rate", "parent": 'USD-PEN', "parentfield": 'exchange_rates',
         "parenttype": 'Currency Exchange', 'idx': 1,
         "type": "sale",
-        "date": '2015-03-06',
+        "date": '2015-03-09',
         "value": val_sale_here
     })
     exchange_rate_sale.ignore_permissions = True
