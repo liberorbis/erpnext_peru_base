@@ -18,6 +18,9 @@
 "Type:","Data (text)","Link","Select","Data","Select","Select","Text","Text","Data","Int","Check","Check","Check","Data","Text","Check","Data","Check","Check","Check","Check","Check","Check"
 "Info:","","Valid DocType","One of: Button, Check, Code, Column Break, Currency, Data, Date, Datetime, Dynamic Link, Float, HTML, Image, Int, Link, Long Text, Password, Percent, Read Only, Section Break, Select, Small Text, Table, Text, Text Editor, Time","","","One of: 1, 2, 3, 4, 5, 6, 7, 8, 9","","","","Integer","0 or 1","0 or 1","0 or 1","","","0 or 1","","0 or 1","0 or 1","0 or 1","0 or 1","0 or 1","0 or 1"
 "Start entering data below this line"
+"","""Address-department""","Address","Link","Department","address_line2","","Address Department","department","department",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Address-province""","Address","Link","Province","department","","Address Province","Province","province",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Address-district""","Address","Link","District","province","","Address District","district","district",0,0,0,0,"","",0,"",0,0,0,0,0,0
 "","""Customer-last_name""","Customer","Data","Last name","first_name","","","","last_name",0,0,0,0,"","",0,"eval:in_list([""Individual""], doc.customer_type)",0,0,0,0,0,0
 "","""Customer-last_name2""","Customer","Data","Last Name2","last_name","","","","last_name2",0,0,0,0,"","",0,"eval:in_list([""Individual""], doc.customer_type)",0,0,0,0,0,0
 "","""Customer-first_name""","Customer","Data","First name","customer_name","","","","first_name",0,0,0,0,"","",0,"eval:in_list([""Individual""], doc.customer_type)",0,0,0,0,0,0
