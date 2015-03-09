@@ -18,9 +18,8 @@
 "Type:","Data (text)","Link","Select","Data","Select","Select","Text","Text","Data","Int","Check","Check","Check","Data","Text","Check","Data","Check","Check","Check","Check","Check","Check"
 "Info:","","Valid DocType","One of: Button, Check, Code, Column Break, Currency, Data, Date, Datetime, Dynamic Link, Float, HTML, Image, Int, Link, Long Text, Password, Percent, Read Only, Section Break, Select, Small Text, Table, Text, Text Editor, Time","","","One of: 1, 2, 3, 4, 5, 6, 7, 8, 9","","","","Integer","0 or 1","0 or 1","0 or 1","","","0 or 1","","0 or 1","0 or 1","0 or 1","0 or 1","0 or 1","0 or 1"
 "Start entering data below this line"
-"","""Address-department""","Address","Link","Department","address_line2","","Address Department","department","department",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Address-province""","Address","Link","Province","department","","Address Province","Province","province",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Address-district""","Address","Link","District","province","","Address District","district","district",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Supplier-doc_number""","Supplier","Data","Number Document","type_document","","","","doc_number",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Supplier-type_document""","Supplier","Link","Type Document","supplier_name","","Element Table","","type_document",0,0,0,0,"","",0,"",0,0,0,0,0,0
 "","""Customer-last_name""","Customer","Data","Last name","first_name","","","","last_name",0,0,0,0,"","",0,"eval:in_list([""Individual""], doc.customer_type)",0,0,0,0,0,0
 "","""Customer-last_name2""","Customer","Data","Last Name2","last_name","","","","last_name2",0,0,0,0,"","",0,"eval:in_list([""Individual""], doc.customer_type)",0,0,0,0,0,0
 "","""Customer-first_name""","Customer","Data","First name","customer_name","","","","first_name",0,0,0,0,"","",0,"eval:in_list([""Individual""], doc.customer_type)",0,0,0,0,0,0
@@ -30,16 +29,7 @@
 "","""Sales Invoice-document_nr""","Sales Invoice","Int","document_nr","serie_nr","","","Document Number","document_nr",0,0,0,0,"","",0,"",0,0,0,0,0,0
 "","""Currency-base_rate""","Currency","Check","Base Rate","number_format","","","","base_rate",0,0,0,0,"","",0,"",0,0,0,0,0,0
 "","""Currency Exchange-exchange_rates""","Currency Exchange","Table","Exchange Rates","exchange_rate","","Exchange Rate","","exchange_rates",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Delivery Note-document_type""","Delivery Note","Link","document_type","naming_series","","Element Table","Document Type Sunat","document_type",0,0,0,0,"20","",0,"",0,0,0,0,0,0
 "","""Delivery Note-serie_nr""","Delivery Note","Data","serie_nr","document_type","","","","serie_nr",0,1,0,0,"","",0,"",0,0,0,0,0,0
 "","""Delivery Note-document_nr""","Delivery Note","Int","document_nr","serie_nr","","","Document Number","document_nr",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Delivery Note-serie_nr""","Delivery Note","Data","serie_nr","document_type","","","","serie_nr",0,1,0,0,"","",0,"",0,0,0,0,0,0
-"","""Delivery Note-document_type""","Delivery Note","Link","document_type","naming_series","","Element Table","Document Type Sunat","document_type",0,0,0,0,"20","",0,"",0,0,0,0,0,0
-"","""Currency Exchange-exchange_rates""","Currency Exchange","Table","Exchange Rates","exchange_rate","","Exchange Rate","","exchange_rates",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Currency-base_rate""","Currency","Check","Base Rate","number_format","","","","base_rate",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Sales Invoice-document_nr""","Sales Invoice","Int","document_nr","serie_nr","","","Document Number","document_nr",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Sales Invoice-serie_nr""","Sales Invoice","Data","serie_nr","document_type","","","","serie_nr",0,1,0,0,"","",0,"",0,0,0,0,0,0
-"","""Sales Invoice-document_type""","Sales Invoice","Link","document_type","naming_series","","Element Table","Document Type Sunat","document_type",0,0,0,0,"20","",0,"",0,0,0,0,0,0
-"","""Customer-doc_number""","Customer","Data","Number document","customer_name","","","","doc_number",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Address-district""","Address","Link","District","province","","Address District","district","district",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Address-province""","Address","Link","Province","department","","Address Province","Province","province",0,0,0,0,"","",0,"",0,0,0,0,0,0
-"","""Address-department""","Address","Link","Department","address_line2","","Address Department","department","department",0,0,0,0,"","",0,"",0,0,0,0,0,0
+"","""Customer-type_document""","Customer","Link","Type Document","customer_name","","Element Table","","type_document",0,0,0,0,"","",0,"",0,0,0,0,0,0
