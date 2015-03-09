@@ -12,16 +12,37 @@ from frappe.model.document import Document
 
 _logger = logging.getLogger(frappe.__name__)
 
-#called father function to validate various numbers of documents by type
+#called father function to validate various numbers of documents
 @frappe.whitelist(allow_guest=True)
-def validate_vat(doc, method):
+def validate_vat_customer(doc, method):
     ret=True
     if isinstance(doc, basestring):
         doc = json.loads(doc)
-    nif = doc.get('doc_number')
-    check_duple_vat(doc)
-    if not check_vat_pe(nif):
-        frappe.throw(_("RUC: {nif} invalid, please review...").format(nif=nif),frappe.DataError)
+    doc_number = doc.get('doc_number')
+    type_document=doc.get('type_document')
+    if type_document=='RUC':
+        check_duple_vat(doc)
+        if not check_vat_pe(doc_number):
+            frappe.throw(_("RUC: {nif} invalid, please review...").format(doc_number=doc_number),frappe.DataError)
+    if type_document=='DNI':
+        check_duple_vat(doc)
+        check_dni_pe(doc_number)
+#called father function to validate various numbers of documents by type
+
+@frappe.whitelist(allow_guest=True)
+def validate_vat_supplier(doc, method):
+    ret=True
+    if isinstance(doc, basestring):
+        doc = json.loads(doc)
+    doc_number = doc.get('doc_number')
+    type_document=doc.get('type_document')
+    if type_document=='RUC':
+        check_duple_vat_supplier(doc)
+        if not check_vat_pe(doc_number):
+            frappe.throw(_("RUC: {nif} invalid, please review...").format(doc_number=doc_number),frappe.DataError)
+    if type_document=='DNI':
+        check_duple_vat_supplier(doc)
+        check_dni_pe(doc_number)
  #   after_install()
     return ret
 #validate number RUC peruvian
@@ -46,6 +67,18 @@ def check_vat_pe(nif):
        n = r
     return n == int(nif[-1])
 
+#validate number RUC peruvian
+def check_dni_pe(dni):
+    dni = str(dni)
+    band=True
+    if not dni.isdigit():
+       frappe.throw(_("Number document: {dni} , only numbers").format(dni=dni),frappe.DataError)
+       return False
+    if len (dni) <> 8:
+        frappe.throw(_("Number document: {dni},  8 dígits, please review...").format(dni=dni),frappe.DataError)
+        return  False
+    return band
+
 #check duplicate number_doc
 def check_duple_vat(doc):
 
@@ -64,5 +97,25 @@ def check_duple_vat(doc):
         return
     elif(customer_name):#nif already exists but another customer already has it
         frappe.throw(_("Number {nif} exist in {name}").format(nif=nif, name=customer_name),frappe.DataError)
+    else:#no customer exist with this nif. Save it
+        return
+
+def check_duple_vat_supplier(doc):
+
+    name_self= doc.get('name')
+    nif = doc.get('doc_number')
+    if not nif:
+        return
+
+    _logger.info("doc is {0}".format(doc))
+
+    supplier = frappe.db.sql("""select supplier_name, name from `tabSupplier` where (doc_number = %s) and (name <> %s)""" , (nif,name_self),as_dict=True)
+    _logger.info("cursor for supplier_name is {0}".format(supplier))
+    supplier_name = supplier[0].get('supplier_name') if len(supplier) > 0 else None
+    cname = doc.get("supplier_name")
+    if(supplier_name and supplier_name == cname and name_self):
+        return
+    elif(supplier_name):
+        frappe.throw(_("Number Document {nif} exist in {name}").format(nif=nif, name=supplier_name),frappe.DataError)
     else:#no customer exist with this nif. Save it
         return

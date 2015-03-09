@@ -13,7 +13,10 @@ fixtures = [
 ]
 doc_events = {
      	"Customer": {
-		"validate": "erpnext_peru_base.erpnext_peru_base.controller.validate_vat.validate_vat",
+		"validate": "erpnext_peru_base.erpnext_peru_base.controller.validate_vat.validate_vat_customer",
+        },
+     	"Supplier": {
+		"validate": "erpnext_peru_base.erpnext_peru_base.controller.validate_vat.validate_vat_supplier",
         },
 	"Sales Invoice": {
 		"autoname": "erpnext_peru_base.erpnext_peru_base.controller.naming.autoname"

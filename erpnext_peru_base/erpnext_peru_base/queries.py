@@ -23,6 +23,17 @@ def get_document_type(doctype, txt, searchfield, start, page_len, filters):
 		limit %(start)s, %(page_len)s """ % {'cond': cond,'txt': "%%%s%%" % txt,
 		'mcond':get_match_cond(doctype),'start': start, 'page_len': page_len})
 
+def get_document_type_basic(doctype, txt, searchfield, start, page_len, filters):
+	cond = ''
+	if filters.get('table'):
+		cond += '(`tabElement Table`.parent = "' + filters['table'] + '" ) '
+
+	return frappe.db.sql("""select `tabElement Table`.name from `tabElement Table` where `tabElement Table`.active = 1
+			and %(cond)s
+		order by `tabElement Table`.name asc
+		limit %(start)s, %(page_len)s """ % {'cond': cond,'txt': "%%%s%%" % txt,
+		'mcond':get_match_cond(doctype),'start': start, 'page_len': page_len})
+
 def get_serie_nr(doctype, txt, searchfield, start, page_len, filters):
 	cond = ''
 	if filters.get('user'):
