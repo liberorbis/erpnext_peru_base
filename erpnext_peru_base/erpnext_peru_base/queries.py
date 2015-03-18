@@ -9,7 +9,7 @@ from frappe.model.db_query import DatabaseQuery
 def get_document_type(doctype, txt, searchfield, start, page_len, filters):
 	cond = ''
 	if filters.get('user'):
-		cond = '(`tabSerial Control`.user = "' + filters['user'] + '" or `tabSerial Control`.user IS NULL) and'
+		cond = '(`tabSerial Control`.user = "' + filters['user'] + '" or `tabSerial Control`.user="") and'
 	if filters.get('table'):
 		cond += '(`tabElement Table`.parent = "' + filters['table'] + '" ) and'
 	if filters.get('document'):
@@ -18,7 +18,7 @@ def get_document_type(doctype, txt, searchfield, start, page_len, filters):
 	return frappe.db.sql("""select `tabElement Table`.name from `tabSerial Control` inner join `tabElement Table`
 		on `tabElement Table`.name = `tabSerial Control`.document_type
 		where `tabSerial Control`.active = 1
-			and %(cond)s `tabSerial Control`.name like "%(txt)s" %(mcond)s
+			and %(cond)s (`tabElement Table`.name like "%(txt)s" or `tabElement Table`.description like "%(txt)s") %(mcond)s
 		order by `tabElement Table`.name asc
 		limit %(start)s, %(page_len)s """ % {'cond': cond,'txt': "%%%s%%" % txt,
 		'mcond':get_match_cond(doctype),'start': start, 'page_len': page_len})
@@ -26,11 +26,11 @@ def get_document_type(doctype, txt, searchfield, start, page_len, filters):
 def get_document_type_basic(doctype, txt, searchfield, start, page_len, filters):
 	cond = ''
 	if filters.get('table'):
-		cond += '(`tabElement Table`.parent = "' + filters['table'] + '" ) '
+		cond += '(ET.parent = "' + filters['table'] + '" ) '
 
-	return frappe.db.sql("""select `tabElement Table`.name from `tabElement Table` where `tabElement Table`.active = 1
-			and %(cond)s
-		order by `tabElement Table`.name asc
+	return frappe.db.sql("""select ET.name, ET.description, ET.element_code from `tabElement Table` as ET
+			where ET.active = 1 and (ET.name like "%(txt)s" or ET.description like "%(txt)s" or ET.element_code like "%(txt)s")
+		and %(cond)s  order by ET.name asc
 		limit %(start)s, %(page_len)s """ % {'cond': cond,'txt': "%%%s%%" % txt,
 		'mcond':get_match_cond(doctype),'start': start, 'page_len': page_len})
 
@@ -65,4 +65,19 @@ def get_district(doctype, txt, searchfield, start, page_len, filters):
 		 %(cond)s order by `tabAddress District`.description asc
 		limit %(start)s, %(page_len)s """ % {'cond': cond,'txt': "%%%s%%" % txt,
 		'start': start, 'page_len': page_len} )
+
+def get_purchase_invoice(doctype, txt, searchfield, start, page_len, filters):
+	cond = ''
+	if filters.get('supplier'):
+		cond = '(pinv.supplier = "' + filters['supplier'] + '" ) and'
+	if filters.get('documentdiff'):
+		cond += '(pinv.document_type <> "' + filters['documentdiff'] + '" ) and'
+
+	return frappe.db.sql("""select pinv.name, pinv.bill_no, pinv.posting_date,pinv.supplier,pinv.grand_total_import
+		from `tabPurchase Invoice` as pinv
+		where pinv.docstatus = 1
+			and %(cond)s (pinv.name like "%(txt)s" or pinv.bill_no like "%(txt)s") %(mcond)s
+		order by pinv.name asc
+		limit %(start)s, %(page_len)s """ % {'cond': cond,'txt': "%%%s%%" % txt,
+		'mcond':get_match_cond(doctype),'start': start, 'page_len': page_len})
 
