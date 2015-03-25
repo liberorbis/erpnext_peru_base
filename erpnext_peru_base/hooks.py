@@ -12,12 +12,12 @@ fixtures = [
 	"Custom Script",
 ]
 doc_events = {
-     	"Customer": {
+	"Customer": {
 		"validate": "erpnext_peru_base.erpnext_peru_base.controller.validate_vat.validate_vat_customer",
-        },
-     	"Supplier": {
+	},
+	"Supplier": {
 		"validate": "erpnext_peru_base.erpnext_peru_base.controller.validate_vat.validate_vat_supplier",
-        },
+	},
 	"Sales Invoice": {
 		"autoname": "erpnext_peru_base.erpnext_peru_base.controller.naming.autoname"
 	},
@@ -27,10 +27,9 @@ doc_events = {
 	"Address District": {
 		"autoname": "erpnext_peru_base.erpnext_peru_base.controller.naming.autoname_code"
 	}
+
 }
-
 after_install = "erpnext_peru_base.erpnext_peru_base.upload_tables_sunat.tables_sunat_after_install"
-
 # Includes in <head>
 # ------------------
 

@@ -74,18 +74,18 @@ def tables_sunat_after_install():
 
          'element_tables':[
              {'name':'Otros(especificar)', 'element_code':'00','element_code2':'','field_name':'Otros(especificar)', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
-             {'name':'Factura', 'element_code':'01','element_code2':'','field_name':'Factura', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
+             {'name':'Factura', 'element_code':'01','element_code2':'FT','field_name':'Factura', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Recibo por Honorarios', 'element_code':'02','element_code2':'','field_name':'Recibo por Honorarios', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
-             {'name':'Boleta de Venta', 'element_code':'03','element_code2':'','field_name':'Boleta de Venta', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
+             {'name':'Boleta de Venta', 'element_code':'03','element_code2':'BV','field_name':'Boleta de Venta', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Liquidación de compra', 'element_code':'04','element_code2':'','field_name':'Liquidación de compra', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Boleto aviación comercial', 'element_code':'05','element_code2':'','field_name':'Boleto aviación comercial', 'val_porcent':0,'val_float':0,'val_string':'','description':'Boleto de compañía de aviación comercial por el servicio de transporte aéreo de pasajeros','active':1,},
              {'name':'Carta de porte aéreo', 'element_code':'06','element_code2':'','field_name':'Carta de porte aéreo', 'val_porcent':0,'val_float':0,'val_string':'','description':'Carta de porte aéreo por el servicio de transporte de carga aérea','active':1,},
-             {'name':'Nota de crédito', 'element_code':'07','element_code2':'','field_name':'Nota de crédito', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
-             {'name':'Nota de débito', 'element_code':'08','element_code2':'','field_name':'Nota de débito', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
-             {'name':'Guía de remisión - Remitente', 'element_code':'09','element_code2':'','field_name':'Guía de remisión - Remitente', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
+             {'name':'Nota de crédito', 'element_code':'07','element_code2':'NC','field_name':'Nota de crédito', 'val_porcent':0,'val_float':-1,'val_string':'','description':'','active':1,},
+             {'name':'Nota de débito', 'element_code':'08','element_code2':'ND','field_name':'Nota de débito', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
+             {'name':'Guía de remisión - Remitente', 'element_code':'09','element_code2':'GRR','field_name':'Guía de remisión - Remitente', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Recibo por Arrendamiento', 'element_code':'10','element_code2':'','field_name':'Recibo por Arrendamiento', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Póliza emitidas', 'element_code':'11','element_code2':'','field_name':'Póliza emitidas', 'val_porcent':0,'val_float':0,'val_string':'','description':'Póliza emitida por las Bolsas de Valores, Bolsas de Productos o Agentes de Intermediación por operaciones, realizadas en las Bolsas de Valores o Productos o fuera de las mismas, autorizadas por CONASEV','active':1,},
-             {'name':'Ticket o cinta emitido Maq.Reg.', 'element_code':'12','element_code2':'','field_name':'Ticket o cinta emitido por máquina registradora', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
+             {'name':'Ticket o cinta emitido Maq.Reg.', 'element_code':'12','element_code2':'TK','field_name':'Ticket o cinta emitido por máquina registradora', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Documento emitido por bancos u otros(controlados por SBS)', 'element_code':'13','element_code2':'','field_name':'Documento emitido por bancos, instituciones financieras, crediticias y de seguros (controlados por SBS)', 'val_porcent':0,'val_float':0,'val_string':'','description':'Documento emitido por bancos, instituciones financieras, crediticias y de seguros que se encuentren bajo el,control de la Superintendencia de Banca y Seguros','active':1,},
              {'name':'Recibo servicios públicos', 'element_code':'14','element_code2':'','field_name':'Recibo servicios públicos', 'val_porcent':0,'val_float':0,'val_string':'','description':'Recibo por servicios públicos de suministro de energía eléctrica, agua, teléfono, telex y telegráficos y otros servicios complementarios que se incluyan en el recibo de servicio público','active':1,},
              {'name':'Boleto de empresas de trans. publico', 'element_code':'15','element_code2':'','field_name':'Boleto emitido por las empresas de transporte público urbano de pasajeros', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
@@ -93,7 +93,7 @@ def tables_sunat_after_install():
              {'name':'Documento Iglesia Católica por el arrendamiento', 'element_code':'17','element_code2':'','field_name':'Documento emitido por la Iglesia Católica por el arrendamiento de bienes inmuebles', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Documento emitido por AFP', 'element_code':'18','element_code2':'','field_name':'Documento emitido por las Administradoras Privadas de Fondo de Pensiones', 'val_porcent':0,'val_float':0,'val_string':'','description':'Documento emitido por las Administradoras Privadas de Fondo de Pensiones que se encuentran bajo la supervisión de la Superintendencia de Administradoras Privadas de Fondos de Pensiones','active':1,},
              {'name':'Boletos espectáculos públicos', 'element_code':'19','element_code2':'','field_name':'Boleto o entrada por atracciones y espectáculos públicos', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
-             {'name':'Comprobante de Retención', 'element_code':'20','element_code2':'','field_name':'Comprobante de Retención', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
+             {'name':'Comprobante de Retención', 'element_code':'20','element_code2':'RET','field_name':'Comprobante de Retención', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Conocimiento de embarque trans.carga marítima', 'element_code':'21','element_code2':'','field_name':'Conocimiento de embarque por el servicio de transporte de carga marítima', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Comprobante por Operaciones No Habituales', 'element_code':'22','element_code2':'','field_name':'Comprobante por Operaciones No Habituales', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Pólizas de adjudicaciones', 'element_code':'23','element_code2':'','field_name':'Pólizas de adjudicaciones', 'val_porcent':0,'val_float':0,'val_string':'','description':'Pólizas de Adjudicación emitidas con ocasión del remate o adjudicación de bienes por venta forzada, por los martilleros o las entidades que rematen o subasten bienes por cuenta de terceros','active':1,},
@@ -111,7 +111,7 @@ def tables_sunat_after_install():
              {'name':'Recibo de Distribución de Gas Natural', 'element_code':'36','element_code2':'','field_name':'Recibo de Distribución de Gas Natural', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Doc. por servicios de consecionarios', 'element_code':'37','element_code2':'','field_name':'Doc. por servicios de consecionarios', 'val_porcent':0,'val_float':0,'val_string':'','description':'Documentos que emitan los concesionarios del servicio de revisiones técnicas vehiculares, por la prestación de dicho servicio','active':1,},
              {'name':'Constancia de Depósito - IVAP (Ley 28211)', 'element_code':'40','element_code2':'','field_name':'Constancia de Depósito - IVAP (Ley 28211)', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
-             {'name':'Declaración Única de Aduanas - Imp. def.', 'element_code':'50','element_code2':'','field_name':'Declaración Única de Aduanas - Importación definitiva', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
+             {'name':'Declaración Única de Aduanas - Imp. def.', 'element_code':'50','element_code2':'DUA','field_name':'Declaración Única de Aduanas - Importación definitiva', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Despacho Simplificado - Imp. Simp.', 'element_code':'52','element_code2':'','field_name':'Despacho Simplificado - Importación Simplificada', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Declaración de Mensajería o Courier', 'element_code':'53','element_code2':'','field_name':'Declaración de Mensajería o Courier', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
              {'name':'Liquidación de Cobranza', 'element_code':'54','element_code2':'','field_name':'Liquidación de Cobranza', 'val_porcent':0,'val_float':0,'val_string':'','description':'','active':1,},
@@ -127,6 +127,7 @@ def tables_sunat_after_install():
          },
 	]
     from frappe.modules import scrub
+    from erpnext_peru_base.erpnext_peru_base import upload_locations
     for r in install_docs:
 		doc = frappe.new_doc(r.get("doctype"))
 		doc.update(r)
@@ -137,3 +138,4 @@ def tables_sunat_after_install():
 			doc.ignore_mandatory = True
 
 		doc.insert()
+    upload_locations.tables_location_after_install()

@@ -9,7 +9,7 @@ from frappe.model.db_query import DatabaseQuery
 def get_document_type(doctype, txt, searchfield, start, page_len, filters):
 	cond = ''
 	if filters.get('user'):
-		cond = '(`tabSerial Control`.user = "' + filters['user'] + '" or `tabSerial Control`.user="") and'
+		cond = '(`tabSerial Control`.user = "' + filters['user'] + '" or `tabSerial Control`.user ="" or `tabSerial Control`.user IS NULL) and'
 	if filters.get('table'):
 		cond += '(`tabElement Table`.parent = "' + filters['table'] + '" ) and'
 	if filters.get('document'):
@@ -61,7 +61,7 @@ def get_district(doctype, txt, searchfield, start, page_len, filters):
 	if filters.get('province'):
 		cond = 'and `tabAddress District`.parent = "' + filters['province'] + '"  '
 	return frappe.db.sql("""select `tabAddress District`.name, `tabAddress District`.description from `tabAddress District`
-		where `tabAddress District`.description like "%(txt)s" or `tabAddress District`.name like "%(txt)s"
+		where (`tabAddress District`.description like "%(txt)s" or `tabAddress District`.name like "%(txt)s")
 		 %(cond)s order by `tabAddress District`.description asc
 		limit %(start)s, %(page_len)s """ % {'cond': cond,'txt': "%%%s%%" % txt,
 		'start': start, 'page_len': page_len} )
