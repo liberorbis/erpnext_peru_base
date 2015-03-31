@@ -91,25 +91,13 @@ def get_sunat_rates(values={}):
 		res['current_sale_ratio'] = days[today.day]['Sale']
 		res['current_purchase_ratio'] = days[today.day]['Purchase']
 
-
-	# currency_name = frappe.db.get_value("Currency Exchange", 'PEN-USD','name')
-	#exchange_rate = frappe.db.get_value("Currency Exchange", 'PEN-USD','exchange_rate')
-	#from_currency = frappe.db.get_value("Currency Exchange", 'PEN-USD','from_currency')
-	#to_currency = frappe.db.get_value("Currency Exchange", 'PEN-USD','to_currency')
-	#print 'VALUES RETURNED: ',currency_name, exchange_rate,from_currency,to_currency
-
-
-	#values={}
-
-	#values={'current_purchase_ratio': 3.093, 'days': {2: {'Purchase': 3.095, 'Sale': 3.091}, 3: {'Purchase': 3.097, 'Sale': 3.093}, 4: {'Purchase': 3.093, 'Sale': 3.091}}, 'current_sale_ratio': 3.091}
-
 	val_purchase_here = res['current_purchase_ratio']
 	val_sale_here = res['current_sale_ratio']
 	exchange_rate_purchase = frappe.get_doc({
 		"doctype": "Exchange Rate", "parent": 'USD-PEN', "parentfield": 'exchange_rates',
 		"parenttype": 'Currency Exchange', 'idx': 1,
 		"type": 'purchase',
-		"date": '2015-03-09',
+		"date": '2015-03-31',
 		"value": val_purchase_here
 	})
 	exchange_rate_purchase.ignore_permissions = True
@@ -121,30 +109,10 @@ def get_sunat_rates(values={}):
 		"doctype": "Exchange Rate", "parent": 'USD-PEN', "parentfield": 'exchange_rates',
 		"parenttype": 'Currency Exchange', 'idx': 1,
 		"type": "sale",
-		"date": '2015-03-09',
+		"date": '2015-03-31',
 		"value": val_sale_here
 	})
 	exchange_rate_sale.ignore_permissions = True
 	exchange_rate_sale.ignore_mandatory = True
 	exchange_rate_sale.insert()
 	exchange_rate_sale.save()
-	# exchange_rate=frappe.new_doc("Currency Exchange")
-	# r={
-	# 'name':'PEN-USD','exchange_rate':5.000,'to_currency':'USD','from_currency':'PEN',
-	# "exchange_rates":[{
-	#     "type": "sale",
-	#     "date":'2015-03-12',
-	#     "value":5.093
-	# }]
-	# }
-	# import unittest
-	# res = frappe.get_list("Event", filters=[["Event", "subject", "like", "_Test Event%"]], fields=["name", "subject"])
-	# self.assertEquals(len(res), 2)
-	# subjects = [r.subject for r in res]
-	# self.assertTrue("_Test Event 1" in subjects)
-	# self.assertTrue("_Test Event 3" in subjects)
-	# assertFalse("_Test Event 2" in subjects)
-	# exchange_rate.ignore_permissions = True
-	# exchange_rate.ignore_mandatory = True
-	# exchange_rate.update(r)
-	# exchange_rate.save()
