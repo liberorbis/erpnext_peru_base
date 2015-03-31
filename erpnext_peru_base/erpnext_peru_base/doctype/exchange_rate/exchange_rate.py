@@ -9,29 +9,29 @@ from frappe.celery_app import celery_task, task_logger
 
 
 class ExchangeRate(Document):
-	pass
+    pass
 
 
 @celery_task()
 def fill_rate(site, exchangerate, event):
-	# hack! pass event="bulk_long" to queue in longjob queue
-	try:
-		frappe.connect(site=site)
-		doc = frappe.get_doc("Exchange Rate", exchangerate)
-		doc.send_bulk()
+    # hack! pass event="bulk_long" to queue in longjob queue
+    try:
+        frappe.connect(site=site)
+        doc = frappe.get_doc("Exchange Rate", exchangerate)
+        doc.send_bulk()
 
-	except:
-		frappe.db.rollback()
-		task_logger.warn(frappe.get_traceback())
+    except:
+        frappe.db.rollback()
+        task_logger.warn(frappe.get_traceback())
 
-		# wasn't able to send emails :(
-		doc.db_set("email_sent", 0)
-		frappe.db.commit()
+        # wasn't able to send emails :(
+        doc.db_set("email_sent", 0)
+        frappe.db.commit()
 
-		raise
+        raise
 
-	else:
-		frappe.db.commit()
+    else:
+        frappe.db.commit()
 
-	finally:
-		frappe.destroy()
+    finally:
+        frappe.destroy()
